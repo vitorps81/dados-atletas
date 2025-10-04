@@ -7,7 +7,6 @@ class Atleta {
     this.notas = notas;
   }
 
-  // Método para calcular categoria
   calculaCategoria() {
     if (this.idade >= 9 && this.idade <= 11) {
       return "Infantil";
@@ -22,12 +21,10 @@ class Atleta {
     }
   }
 
-  // Método para calcular IMC
   calculaIMC() {
     return this.peso / (this.altura * this.altura);
   }
 
-  // Método para calcular média válida (descarta menor e maior nota)
   calculaMediaValida() {
     let notasOrdenadas = this.notas.slice().sort((a, b) => a - b);
     let notasValidas = notasOrdenadas.slice(1, notasOrdenadas.length - 1);
@@ -35,7 +32,6 @@ class Atleta {
     return soma / notasValidas.length;
   }
 
-  // Métodos de acesso
   obtemNomeAtleta() {
     return this.nome;
   }
@@ -69,7 +65,6 @@ class Atleta {
   }
 }
 
-// Exemplo de uso:
 const atleta = new Atleta("Cesar Abascal", 30, 80, 1.70, [10, 9.34, 8.42, 10, 7.88]);
 
 console.log(`Nome: ${atleta.obtemNomeAtleta()}`);
